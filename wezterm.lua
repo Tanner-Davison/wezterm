@@ -10,23 +10,28 @@ config.font_size = 12
 
 -- Cool visual effects
 config.window_background_opacity = 0.9
-config.window_background_blur = 20
+config.background = {
+	{
+		source = { Color = "#1a1b26" },
+		width = "100%",
+		height = "100%",
+		opacity = 0.9,
+	},
+}
 config.window_decorations = "RESIZE"
 
 -- Default to PowerShell
 config.default_prog = { "pwsh.exe" }
 
 -- Tab bar styling
-config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = true
 
 -- Window padding
 config.window_padding = {
-	left = 20,
-	right = 20,
-	top = 20,
-	bottom = 20,
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 10,
 }
 
 -- Cool cursor effects
