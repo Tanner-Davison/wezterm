@@ -73,12 +73,11 @@ config.default_workspace = "main"
 
 -- Cool color customizations
 config.colors = {
-	cursor_bg = "#ff6b6b",
-	cursor_fg = "#ffffff",
+	cursor_bg = "#bf00ff", -- Neon purple!
+	cursor_fg = "#ffffff", -- Keep white text
 	selection_bg = "#44475a",
 	selection_fg = "#f8f8f2",
 }
-
 -- Fancy tab styling
 config.colors.tab_bar = {
 	background = "#1a1b26",
