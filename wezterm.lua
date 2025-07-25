@@ -19,6 +19,19 @@ config.background = {
 	},
 }
 config.window_decorations = "RESIZE"
+config.initial_cols = 155 -- Very wide
+config.initial_rows = 66 -- Very tall
+-- Position window at top-left corner (0,0 coordinates)
+config.window_frame = {
+	font_size = 12,
+}
+
+-- Set window position to top-left
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+	local gui_window = window:gui_window()
+	gui_window:set_position(0, 0) -- x=0, y=0 (top-left corner)
+end)
 
 -- Default to PowerShell
 config.default_prog = { "pwsh.exe" }
@@ -38,7 +51,7 @@ config.window_padding = {
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 800
 config.cursor_thickness = 2
-
+config.animation_fps = 60
 -- Scrollback and performance
 config.scrollback_lines = 10000
 config.enable_scroll_bar = true
@@ -73,8 +86,9 @@ config.default_workspace = "main"
 
 -- Cool color customizations
 config.colors = {
-	cursor_bg = "#bf00ff", -- Neon purple!
-	cursor_fg = "#ffffff", -- Keep white text
+	cursor_bg = "#00ff41", -- Normal mode: Matrix green
+	cursor_fg = "#000000", -- Black text on bright cursor
+	cursor_border = "#ffffff",
 	selection_bg = "#44475a",
 	selection_fg = "#f8f8f2",
 }
