@@ -6,7 +6,7 @@ config.color_scheme = "Tokyo Night"
 
 -- Font with ligatures
 config.font = wezterm.font("Fira Code", { weight = "Medium" })
-config.font_size = 12
+config.font_size = 14
 
 -- Cool visual effects
 config.window_background_opacity = 0.9
@@ -15,7 +15,7 @@ config.background = {
 		source = { Color = "#1a1b26" },
 		width = "100%",
 		height = "100%",
-		opacity = 0.9,
+		opacity = 0.95,
 	},
 }
 config.window_decorations = "RESIZE"
@@ -23,7 +23,7 @@ config.initial_cols = 155 -- Very wide
 config.initial_rows = 66 -- Very tall
 -- Position window at top-left corner (0,0 coordinates)
 config.window_frame = {
-	font_size = 12,
+	font_size = 9,
 }
 
 -- Set window position to top-left
@@ -52,10 +52,12 @@ config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 800
 config.cursor_thickness = 2
 config.animation_fps = 60
+config.max_fps = 60
+
 -- Scrollback and performance
 config.scrollback_lines = 10000
-config.enable_scroll_bar = true
-
+config.enable_scroll_bar = false
+config.front_end = "OpenGL"
 -- Custom key bindings for better workflow
 config.keys = {
 	-- Split panes with more intuitive keys
