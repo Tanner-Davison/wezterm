@@ -81,6 +81,7 @@ config.keys = {
 
 	-- Copy mode (like vim)
 	{ key = "[", mods = "CTRL|SHIFT", action = wezterm.action.ActivateCopyMode },
+	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 }
 
 -- Advanced: Workspaces (like tmux sessions)
