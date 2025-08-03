@@ -6,7 +6,7 @@ config.color_scheme = "Tokyo Night"
 
 -- Font with ligatures
 config.font = wezterm.font("Fira Code", { weight = "Medium" })
-config.font_size = 14
+config.font_size = 13
 
 -- Cool visual effects
 config.window_background_opacity = 0.9
@@ -44,7 +44,7 @@ config.window_padding = {
 	left = 10,
 	right = 10,
 	top = 10,
-	bottom = 10,
+	bottom = 5,
 }
 
 -- Cool cursor effects
@@ -81,6 +81,7 @@ config.keys = {
 
 	-- Copy mode (like vim)
 	{ key = "[", mods = "CTRL|SHIFT", action = wezterm.action.ActivateCopyMode },
+	{ key = "v", mods = "CTRL", action = wezterm.action.PasteFrom("Clipboard") },
 }
 
 -- Advanced: Workspaces (like tmux sessions)
