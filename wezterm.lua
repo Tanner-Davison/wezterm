@@ -20,7 +20,7 @@ config.background = {
 }
 config.window_decorations = "RESIZE"
 config.initial_cols = 155 -- Very wide
-config.initial_rows = 60 -- Very tall
+config.initial_rows = 62 -- Very tall
 -- Position window at top-left corner (0,0 coordinates)
 config.window_frame = {
 	font_size = 9,
