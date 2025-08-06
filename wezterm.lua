@@ -1,18 +1,33 @@
 local wezterm = require("wezterm")
 local config = {}
-
+config.term = "wezterm"
+config.set_environment_variables = {
+	LANG = "en_US.UTF-8",
+}
 -- Color scheme
-config.color_scheme = "Tokyo Night"
+-- tokyo night(prefered)
+config.color_scheme = "Seti (Gogh)"
 
 -- Font with ligatures
-config.font = wezterm.font("Fira Code", { weight = "Medium" })
+config.font = wezterm.font_with_fallback({
+	{
+		--DECENT fallback =>
+		family = "JetBrains Mono",
+		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
+	},
+	{ family = "Fira Code", weight = "Medium" },
+	"Noto Color Emoji",
+})
 config.font_size = 13
 
 -- Cool visual effects
 config.window_background_opacity = 0.9
+
+-- deepblue = "#060F1E" (favorite)
+-- grayish/nice =  "#1a1b26" (second)
 config.background = {
 	{
-		source = { Color = "#1a1b26" },
+		source = { Color = "#060F1E" },
 		width = "100%",
 		height = "100%",
 		opacity = 0.95,
@@ -20,10 +35,10 @@ config.background = {
 }
 config.window_decorations = "RESIZE"
 config.initial_cols = 155 -- Very wide
-config.initial_rows = 62 -- Very tall
+config.initial_rows = 56 --Very tall
 -- Position window at top-left corner (0,0 coordinates)
 config.window_frame = {
-	font_size = 9,
+	font_size = 10,
 }
 
 -- Set window position to top-left
@@ -40,20 +55,20 @@ config.default_prog = { "pwsh.exe" }
 config.use_fancy_tab_bar = true
 
 -- Window padding
-config.window_padding = {
-	left = 10,
-	right = 10,
-	top = 10,
-	bottom = 5,
-}
+-- config.window_padding = {
+-- 	left = 10,
+-- 	right = 10,
+-- 	top = 10,
+-- 	bottom = 5,
+-- }
 
 -- Cool cursor effects
-config.default_cursor_style = "BlinkingBlock"
-config.cursor_blink_rate = 800
-config.cursor_thickness = 2
-config.animation_fps = 60
-config.max_fps = 60
-
+-- config.cursor_blink_rate = 800
+-- config.cursor_thickness = 2
+-- config.animation_fps = 60
+-- config.max_fps = 60
+config.default_cursor_style = "SteadyBlock"
+config.cursor_blink_rate = 0
 -- Scrollback and performance
 config.scrollback_lines = 10000
 config.enable_scroll_bar = false
@@ -89,11 +104,11 @@ config.default_workspace = "main"
 
 -- Cool color customizations
 config.colors = {
-	cursor_bg = "#00ff41", -- Normal mode: Matrix green
-	cursor_fg = "#000000", -- Black text on bright cursor
-	cursor_border = "#ffffff",
-	selection_bg = "#44475a",
-	selection_fg = "#f8f8f2",
+	-- cursor_bg = "#00ff41", -- Normal mode: Matrix green
+	-- cursor_fg = "#000000", -- Black text on bright cursor
+	-- cursor_border = "#ffffff",
+	-- selection_bg = "#44475a",
+	-- selection_fg = "#f8f8f2",
 }
 -- Fancy tab styling
 config.colors.tab_bar = {
