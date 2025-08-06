@@ -65,12 +65,19 @@ config.front_end = "OpenGL"
 config.animation_fps = 60
 config.max_fps = 60
 
+-- Cursor settings - allow Neovim to control cursor shape
+config.enable_csi_u_key_encoding = false
+config.default_cursor_style = "SteadyBlock"
+config.cursor_blink_rate = 800 -- Add back the blinking
+config.cursor_thickness = 2 -- Add back thickness
+config.animation_fps = 60 -- Add back animation
+config.max_fps = 60
 -- Color customizations
 config.colors = {
 	-- Cursor colors commented out to let Neovim control cursor
-	-- cursor_bg = "#00ff41",
-	-- cursor_fg = "#000000",
-	-- cursor_border = "#ffffff",
+	cursor_bg = "#c0caf5",
+	cursor_fg = "#000000",
+	cursor_border = "#ffffff",
 	selection_bg = "#44475a",
 	selection_fg = "#f8f8f2",
 }
